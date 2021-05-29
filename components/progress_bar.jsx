@@ -1,6 +1,30 @@
 import PropTypes from "prop-types";
 import styled from "styled-components";
 
+import { InstrumentIcon } from "./instrument_icon";
+
+const numStrings = [
+  "zero",
+  "one",
+  "two",
+  "three",
+  "four",
+  "five",
+  "six",
+  "seven",
+  "eight",
+  "nine",
+  "ten",
+];
+
+/* utility func for naming numbers */
+const numberToString = (number) => {
+  if (number > 10) {
+    throw new Error("number must be less than 10");
+  }
+  return numStrings[number];
+};
+
 const Bar = styled.div`
   margin-bottom: 1rem;
   position: relative;
@@ -25,31 +49,13 @@ const Filler = styled.div`
   background-color: var(--clr-progress);
 `;
 
-const numStrings = [
-  "zero",
-  "one",
-  "two",
-  "three",
-  "four",
-  "five",
-  "six",
-  "seven",
-  "eight",
-  "nine",
-  "ten",
-];
-
-const numberToString = (number) => {
-  if (number > 10) {
-    throw new Error("number must be less than 10");
-  }
-  return numStrings[number];
-};
-
 export const ProgressBar = ({ itemName, current, target }) => {
   return (
     <>
-      <h3>{itemName}</h3>
+      <h3>
+        {itemName}
+        <InstrumentIcon instrument={itemName} />
+      </h3>
       {current === 0 ? (
         <p>You can be the first!</p>
       ) : (
