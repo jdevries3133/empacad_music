@@ -21,7 +21,6 @@ const Bar = styled.div`
 const Filler = styled.div`
   height: 32px;
   width: ${(props) => props.width ?? "0%"};
-  transition: width 0.4s ease-in-out;
   border-radius: 1000px 0 0 1000px;
   background-color: var(--clr-progress);
 `;

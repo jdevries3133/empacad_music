@@ -5,14 +5,20 @@ import { Sidebar, Header, InstrumentDriveProgress } from "../components";
 import { useFundraiserProgress } from "../hooks";
 
 const PageWrapper = styled.div`
+  max-width: 120ch;
   margin: 0 auto;
   background-color: var(--clr-background);
-  max-width: 80ch;
 `;
 
 const MainContent = styled.div`
+  margin-top: 2rem;
   display: grid;
-  grid-template-columns: 3fr 1fr;
+  grid-template-columns: 3fr 2fr;
+  grid-gap: 2rem;
+
+  @media (max-width: 425px) {
+    grid-template-columns: 1fr;
+  }
 `;
 
 export default function Home() {

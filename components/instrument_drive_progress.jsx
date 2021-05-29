@@ -1,11 +1,16 @@
 import { useState, useEffect } from "react";
+import styled from "styled-components";
 import PropTypes from "prop-types";
 
 import { ProgressBar } from "./progress_bar";
 
+const Article = styled.article`
+  max-width: 80ch;
+`;
+
 export const InstrumentDriveProgress = ({ progress }) => {
   return (
-    <article id="music_instrument_drive_goals">
+    <Article id="music_instrument_drive_goals">
       <h2>Music Instrument Drive</h2>
       {progress.map((item, index) => (
         <ProgressBar
@@ -15,7 +20,7 @@ export const InstrumentDriveProgress = ({ progress }) => {
           target={item.target}
         />
       ))}
-    </article>
+    </Article>
   );
 };
 
