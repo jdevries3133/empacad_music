@@ -26,10 +26,39 @@ const Filler = styled.div`
   background-color: var(--clr-progress);
 `;
 
+const numStrings = [
+  "zero",
+  "one",
+  "two",
+  "three",
+  "four",
+  "five",
+  "six",
+  "seven",
+  "eight",
+  "nine",
+  "ten",
+];
+
+const numberToString = (number) => {
+  if (number > 10) {
+    throw new Error("number must be less than 10");
+  }
+  return numStrings[number];
+};
+
 export const ProgressBar = ({ itemName, current, target }) => {
   return (
     <>
       <h3>{itemName}</h3>
+      {current === 0 ? (
+        <p>You can be the first!</p>
+      ) : (
+        <p>
+          We have <b>{numberToString(current)}</b> towards our goal of{" "}
+          <b>{numberToString(target)}</b>
+        </p>
+      )}
       <Bar>
         <Filler width={`${Math.floor((current / target) * 100)}%`} />
         <progress value={current} max={target}>

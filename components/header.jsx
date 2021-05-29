@@ -7,8 +7,9 @@ const Logo = styled(Image)`
 `;
 
 const HeadEl = styled.header`
-  display: inline-flex;
+  display: flex;
   align-items: center;
+  justify-content: center;
   flex-wrap: wrap;
   gap: 1rem;
 `;
@@ -23,6 +24,6 @@ const H1 = styled.h1`
 export const Header = () => (
   <HeadEl>
     <H1>EMPACAD Music</H1>
-    <Logo src="/logo.jpg" alt="EMPACAD Music Logo" width={300} height={300} />
+    <Logo src="/logo.jpg" alt="EMPACAD Music Logo" width={250} height={250} />
   </HeadEl>
 );

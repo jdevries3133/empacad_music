@@ -1,10 +1,24 @@
 import Head from "next/head";
+import styled from "styled-components";
 
-import { Header, InstrumentDriveProgress } from "../components";
+import { Sidebar, Header, InstrumentDriveProgress } from "../components";
+import { useFundraiserProgress } from "../hooks";
+
+const PageWrapper = styled.div`
+  margin: 0 auto;
+  background-color: var(--clr-background);
+  max-width: 80ch;
+`;
+
+const MainContent = styled.div`
+  display: grid;
+  grid-template-columns: 3fr 1fr;
+`;
 
 export default function Home() {
+  const progress = useFundraiserProgress();
   return (
-    <>
+    <PageWrapper>
       <Head>
         <title>Empowerment Academy Music</title>
         <meta
@@ -18,7 +32,10 @@ export default function Home() {
       </Head>
 
       <Header />
-      <InstrumentDriveProgress />
-    </>
+      <MainContent>
+        <InstrumentDriveProgress progress={progress} />
+        <Sidebar />
+      </MainContent>
+    </PageWrapper>
   );
 }
