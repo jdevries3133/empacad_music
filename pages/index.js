@@ -1,7 +1,12 @@
 import Head from "next/head";
 import styled from "styled-components";
 
-import { Sidebar, Header, InstrumentDriveProgress } from "../components";
+import {
+  Sidebar,
+  Header,
+  InstrumentDriveProgress,
+  InstrumentDonateLeadForm,
+} from "../components";
 import { useFundraiserProgress } from "../hooks";
 
 const PageWrapper = styled.div`
@@ -10,7 +15,7 @@ const PageWrapper = styled.div`
   background-color: var(--clr-background);
 `;
 
-const MainContent = styled.div`
+const InstrumentDriveContainer = styled.div`
   margin-top: 2rem;
   display: grid;
   grid-template-columns: 3fr 2fr;
@@ -38,10 +43,11 @@ export default function Home() {
       </Head>
 
       <Header />
-      <MainContent>
+      <InstrumentDriveContainer>
         <InstrumentDriveProgress progress={progress} />
         <Sidebar progress={progress} />
-      </MainContent>
+      </InstrumentDriveContainer>
+      <InstrumentDonateLeadForm />
     </PageWrapper>
   );
 }
