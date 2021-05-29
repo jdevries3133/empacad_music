@@ -12,9 +12,14 @@ const Container = styled.div`
  * instruments!
  */
 export const Sidebar = ({ progress }) => {
+  const fillPercent = Math.floor(
+    (progress.map((i) => i.current).reduce((p, c) => p + c, 0) /
+      progress.map((i) => i.target).reduce((p, c) => p + c, 0)) *
+      100
+  );
   return (
     <Container>
-      <Thermometer fillPercent={50} />
+      <Thermometer fillPercent={fillPercent} />
     </Container>
   );
 };

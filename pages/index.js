@@ -34,7 +34,7 @@ export default function Home() {
       <Header />
       <MainContent>
         <InstrumentDriveProgress progress={progress} />
-        <Sidebar />
+        <Sidebar progress={progress} />
       </MainContent>
     </PageWrapper>
   );
