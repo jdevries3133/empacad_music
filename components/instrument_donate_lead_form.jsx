@@ -1,3 +1,4 @@
+import Image from "next/image";
 import { useState } from "react";
 import styled from "styled-components";
 
@@ -21,11 +22,10 @@ const Form = styled.form`
     font-weight: bold;
   }
 
-  & > input[type="text"],
-  input[type="tel"],
-  input[type="email"] {
+  & > input,
+  select {
     background-color: var(--clr-progbar);
-    border-color: var(--clr-progbar);
+    border: 2px solid var(--clr-empacad-yellow--dark);
   }
 `;
 
@@ -46,24 +46,22 @@ export const InstrumentDonateLeadForm = () => {
   return (
     <FormContainer>
       <h1>🎺 Donate An Instrument 🎷</h1>
-      <p>
+      <h3>
         Give the gift of music to generations of young scholars at Empowerment
         Academy. We are sincerely grateful for every contribution!
-      </p>
+      </h3>
       <p>
         Or, learn more about us first by reading about{" "}
-        <a href="#">our mission,</a>{" "}
+        <a href="#">our mission,</a> visiting the school's{" "}
         <a
           href="https://empacad.org/"
           target="_blanket"
           rel="noopener noreferrer"
         >
-          visiting the school's main website,
+          main website <Image src="/icon/link.svg" width={10} height={10} />,
         </a>{" "}
-        or{" "}
-        <a href="mailto:jdevries@empacad.org">
-          getting in touch with our music teacher, John DeVries.
-        </a>
+        or getting in touch with our music teacher,{" "}
+        <a href="mailto:jdevries@empacad.org">Jack DeVries.</a>
       </p>
       <Form onSubmit={submitHandler}>
         <label htmlFor="name">Name</label>

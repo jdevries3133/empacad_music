@@ -3,8 +3,8 @@ import styled from "styled-components";
 
 import { Thermometer } from "./thermometer";
 
-const H3 = styled.h3`
-  font-size: 2rem;
+const H2 = styled.h2`
+  font-weight: normal;
 `;
 
 const Hero = styled.span`
@@ -42,10 +42,10 @@ export const Sidebar = ({ progress }) => {
     : 0;
   return (
     <Container>
-      <H3>
+      <H2>
         <Sidekick>Help us reach our goal to get</Sidekick> <Hero>sixteen</Hero>{" "}
         <Sidekick>band instruments for our scholars!</Sidekick>
-      </H3>
+      </H2>
       <Thermometer fillPercent={fillPercent} />
     </Container>
   );

@@ -6,3 +6,4 @@
 - Trumpet: "cornet by Tom Fricker from the Noun Project"
 - Trombone: "Trombone by Olena Panasovska from the Noun Project"
 - Drum: "Snare Drum by Marta Ambrosetti from the Noun Project"
+- Link: "External Link by Alebaer from the Noun Project"
