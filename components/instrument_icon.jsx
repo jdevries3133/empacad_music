@@ -1,4 +1,4 @@
-import styled, { css } from "styled-components";
+import styled from "styled-components";
 import Image from "next/image";
 
 /* Generic rotation, positioning, and sizing for icons */
@@ -18,7 +18,7 @@ export const InstrumentIcon = ({ instrument }) => {
   switch (instrument) {
     case "Alto Saxophone":
       return (
-        <IconWrapper rotate>
+        <IconWrapper>
           <Image src="/icon/saxophone.svg" width={10} height={10} />
         </IconWrapper>
       );
@@ -30,13 +30,13 @@ export const InstrumentIcon = ({ instrument }) => {
       );
     case "Trombone":
       return (
-        <IconWrapper rotate="270deg">
+        <IconWrapper>
           <Image src={`/icon/${instrument}.svg`} width={10} height={10} />
         </IconWrapper>
       );
     default:
       return (
-        <IconWrapper rotate>
+        <IconWrapper>
           <Image src={`/icon/${instrument}.svg`} width={10} height={10} />
         </IconWrapper>
       );

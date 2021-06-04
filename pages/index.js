@@ -18,11 +18,15 @@ const PageWrapper = styled.div`
 const InstrumentDriveContainer = styled.div`
   margin-top: 2rem;
   display: grid;
-  grid-template-columns: 3fr 2fr;
+  grid-template-columns: 2fr 3fr 2fr;
   grid-gap: 2rem;
 
-  @media (max-width: 425px) {
+  @media (max-width: 780px) {
     grid-template-columns: 1fr;
+
+    & > div#sidebar {
+      display: none;
+    }
   }
 `;
 
@@ -44,10 +48,12 @@ export default function Home() {
 
       <Header />
       <InstrumentDriveContainer>
+        <InstrumentDonateLeadForm />
         <InstrumentDriveProgress progress={progress} />
-        <Sidebar progress={progress} />
+        <div id="sidebar">
+          <Sidebar progress={progress} />
+        </div>
       </InstrumentDriveContainer>
-      <InstrumentDonateLeadForm />
     </PageWrapper>
   );
 }

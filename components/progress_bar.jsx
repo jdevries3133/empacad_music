@@ -58,6 +58,10 @@ export const ProgressBar = ({ itemName, current, target }) => {
       </h3>
       {current === 0 ? (
         <p>You can be the first!</p>
+      ) : current === target ? (
+        <p>
+          We did it! <b>Thank you</b> to our donors!
+        </p>
       ) : (
         <p>
           We have <b>{numberToString(current)}</b> towards our goal of{" "}
