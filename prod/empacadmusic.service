@@ -1,12 +1,12 @@
-[Unit]
+Unit]
 Description=Node server for empacadmusic.org / NextJS
 After=network.target
 
 [Service]
 User=www-data
 Group=www-data
-WorkingDirectory=/home/jack/empacad_music
-ExecStart=npm run start
+WorkingDirectory=/home/ubuntu/empacad_music
+ExecStart=/home/ubuntu/.nvm/versions/node/v14.17.0/bin/node /home/ubuntu/empacad_music/node_modules/.bin/next start
 
 [Install]
 WantedBy=multi-user.target

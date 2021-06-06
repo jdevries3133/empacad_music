@@ -5,8 +5,8 @@ After=network.target
 [Service]
 User=www-data
 Group=www-data
-WorkingDirectory=/home/jack/empacad_music/backend
-ExecStart=/home/jack/empacad_music/backend/venv/bin/gunicorn --access-logfile /var/log/api_empacad_music/gunicorn.log --workers 3 --bind unix:/home/jack/empacad_music/backend/run/api_empacadmusic.sock backend.wsgi:application
+WorkingDirectory=/home/ubuntu/empacad_music/backend
+ExecStart=/home/ubuntu/empacad_music/backend/venv/bin/gunicorn --access-logfile /var/log/api_empacad_music/gunicorn.log --workers 3 --bind unix:/home/ubuntu/empacad_music/backend/run/api_empacadmusic.sock backend.wsgi:application
 
 [Install]
 WantedBy=multi-user.target
