@@ -28,16 +28,10 @@ export const InstrumentIcon = ({ instrument }) => {
           <Image src="/icon/drum.svg" width={10} height={10} />
         </IconWrapper>
       );
-    case "Trombone":
-      return (
-        <IconWrapper>
-          <Image src={`/icon/${instrument}.svg`} width={10} height={10} />
-        </IconWrapper>
-      );
     default:
       return (
         <IconWrapper>
-          <Image src={`/icon/${instrument}.svg`} width={10} height={10} />
+          <Image src={`/icon/${instrument.toLowerCase()}.svg`} width={10} height={10} />
         </IconWrapper>
       );
   }
