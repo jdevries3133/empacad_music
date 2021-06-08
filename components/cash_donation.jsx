@@ -1,6 +1,8 @@
 import styled, { css } from "styled-components";
 
 const Article = styled.article`
+  margin: auto;
+  max-width: 120ch;
   margin-top: 1rem;
   background-color: var(--clr-progress--darkest);
   border-radius: 10px;
