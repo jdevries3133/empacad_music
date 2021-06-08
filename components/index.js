@@ -8,3 +8,5 @@ export { Sidebar } from "./sidebar";
 export { InstrumentDriveProgress } from "./instrument_drive_progress";
 /* second item on landing page */
 export { InstrumentDonateLeadForm } from "./lead_form";
+/* bottom section with paypal button */
+export { CashDonation } from "./cash_donation";
