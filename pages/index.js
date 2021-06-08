@@ -6,6 +6,7 @@ import {
   Header,
   InstrumentDriveProgress,
   InstrumentDonateLeadForm,
+  CashDonation,
 } from "../components";
 import { useFundraiserProgress } from "../hooks";
 
@@ -33,7 +34,7 @@ const InstrumentDriveContainer = styled.div`
 export default function Home() {
   const progress = useFundraiserProgress();
   return (
-    <PageWrapper>
+    <>
       <Head>
         <title>Empowerment Academy Music</title>
         <meta
@@ -45,15 +46,17 @@ export default function Home() {
         />
         <link rel="icon" href="/favicon.ico" />
       </Head>
-
-      <Header />
-      <InstrumentDriveContainer>
-        <InstrumentDonateLeadForm />
-        <InstrumentDriveProgress progress={progress} />
-        <div id="sidebar">
-          <Sidebar progress={progress} />
-        </div>
-      </InstrumentDriveContainer>
-    </PageWrapper>
+      <PageWrapper>
+        <Header />
+        <InstrumentDriveContainer>
+          <InstrumentDonateLeadForm />
+          <InstrumentDriveProgress progress={progress} />
+          <div id="sidebar">
+            <Sidebar progress={progress} />
+          </div>
+        </InstrumentDriveContainer>
+      </PageWrapper>
+      <CashDonation />
+    </>
   );
 }

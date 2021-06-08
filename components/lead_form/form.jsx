@@ -77,7 +77,7 @@ export const LeadForm = ({ onSubmit, inputHandler, values }) => (
 LeadForm.propTypes = {
   onSubmit: PropTypes.func,
   inputHandler: PropTypes.func,
-  values: PropTypes.objectOf({
+  values: PropTypes.shape({
     name: PropTypes.string,
     email: PropTypes.string,
     phone: PropTypes.string,

@@ -5,6 +5,7 @@
 :root {
   --clr-progress: hsl(111deg 100% 74%);
   --clr-progress--dark: hsl(111deg 99% 48%);
+  --clr-progress--darkest: hsl(111deg 100% 23%);
   --clr-background: hsl(36deg 100% 93%);
   --clr-progbar: hsl(0deg 0% 89%);
   --clr-grey-text: hsl(0deg 0% 25%);
@@ -20,6 +21,7 @@ body {
 }
 
 p {
+  max-width: 60ch;
   color: var(--clr-grey-text);
 }
 
