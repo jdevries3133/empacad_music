@@ -23,7 +23,6 @@ export const InstrumentDonateLeadForm = () => {
     complete: "COMPLETE",
   };
   const [formState, setFormState] = useState(formStates.initial);
-  console.log(formState);
   const [values, setValues] = useState({
     name: "",
     phone: "",
