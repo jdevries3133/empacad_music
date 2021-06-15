@@ -19,4 +19,4 @@ def lead_form(request):
     if serializer.is_valid():
         instance = serializer.save()
         return Response(LeadSerializer(instance).data)
-    return Response(serializer.errors)
+    return Response(serializer.errors, status=status.HTTP_400_BAD_REQUEST)

@@ -64,6 +64,8 @@ export const InstrumentDonateLeadForm = () => {
     const res = await sendData(values);
     if (res.ok) {
       setFormState(formStates.complete);
+    } else {
+      setFormState(formStates.error);
     }
   };
 
@@ -112,7 +114,10 @@ export const InstrumentDonateLeadForm = () => {
       ) : formState === formStates.loading ? (
         <Spinner />
       ) : formState === formStates.error ? (
-        <h3>Something went wrong</h3>
+        <>
+          <h3>Something went wrong</h3>
+          <p>Please refresh the page and try again </p>
+        </>
       ) : formState === formStates.complete ? (
         <>
           <h2>🎊 Thank You! 🎉</h2>

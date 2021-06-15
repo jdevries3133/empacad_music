@@ -1,18 +1,22 @@
 import { API_BASE_URL } from "../../util/constants";
 
 export const sendData = async (data) => {
+  // need to filter out empty strings
+  const preppedData = {};
+  if (data.name) preppedData["name"] = data.name;
+  if (data.email) preppedData["email"] = data.email;
+  if (data.phone) preppedData["phone"] = data.phone;
+  if (data.instrument) preppedData["instrument"] = { name: data.instrument };
+  if (data.otherInstrument)
+    preppedData["instrument"] = { name: data.otherInstrument };
+
   const res = await fetch(`${API_BASE_URL}/lead/`, {
     method: "POST",
     cache: "no-cache",
     headers: {
       "Content-Type": "application/json",
     },
-    body: data.otherInstrument
-      ? JSON.stringify({
-          data,
-          instrument: { name: data.otherInstrument },
-        })
-      : JSON.stringify({ ...data, instrument: { name: data.instrument } }),
+    body: JSON.stringify(preppedData),
   });
   return res;
 };
