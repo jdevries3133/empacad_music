@@ -19,14 +19,18 @@ export const sendData = async (data) => {
 
 export const validateData = (data) => {
   const errors = {};
-  if (!data.name) errors["name"] = ["Please enter your name"];
-  if (!data.email || !data.phone)
-    errors["contact"] = ["Please enter either a phone number or email address"];
-  if (data.instrument === "Default")
-    errors["instrument"] = [
+  if (!data.name) errors["name"] = "Please enter your name.";
+  if (!(data.email || data.phone)) {
+    errors["email"] =
+      "Please provide an email or phone number so that we can get in touch!";
+    errors["phone"] =
+      "Please provide a phone number or email so that we can get in touch!";
+  }
+  if (!data.instrument || data.instrument === "Default")
+    errors["instrument"] =
       'Please select an instrument. You may select "Other," and describe ' +
-        "your instrument if it is not on the list",
-    ];
+      "your instrument if it is not on the list.";
+
   return errors;
 };
 

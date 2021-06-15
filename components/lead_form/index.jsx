@@ -2,6 +2,7 @@ import { useState } from "react";
 import styled from "styled-components";
 
 import { LeadForm } from "./form";
+import { AboutUs as Us } from "../about_us";
 import { Spinner } from "../loading";
 import { sendData, validateData, isEmpty } from "./util";
 
@@ -22,6 +23,7 @@ export const InstrumentDonateLeadForm = () => {
     complete: "COMPLETE",
   };
   const [formState, setFormState] = useState(formStates.initial);
+  console.log(formState);
   const [values, setValues] = useState({
     name: "",
     phone: "",
@@ -31,15 +33,31 @@ export const InstrumentDonateLeadForm = () => {
     errors: {},
   });
 
+  /* validation */
+  const errors = validateData(values);
+
+  /**
+   * fields gets passed to the form layout component. It's shape is detailed
+   * in the PropTypes of <Layout />
+   */
+  const fields = {};
+  Object.keys(values).forEach((k) => {
+    fields[k] = {
+      value: values[k],
+      errors: {
+        show: formState === formStates.invalid,
+        message: errors[k],
+      },
+    };
+  });
+
   const submitHandler = async (e) => {
     e.preventDefault();
     setFormState(formStates.loading);
 
-    /* validation */
-    const errors = validateData(values);
+    /* abort submission and make validation errors appear */
     if (!isEmpty(errors)) {
       setFormState(formStates.invalid);
-      setValues({ ...values, errors });
       return; // if validation fails
     }
 
@@ -61,8 +79,8 @@ export const InstrumentDonateLeadForm = () => {
         Academy. We are sincerely grateful for every contribution!
       </h3>
       <p>
-        Or, learn more about us first by reading about{" "}
-        <a href="#">our mission,</a> visiting the school's{" "}
+        Or, learn more about us first by reading about <Us /> visiting the
+        school's{" "}
         <a
           href="https://empacad.org/"
           target="_blanket"
@@ -89,8 +107,8 @@ export const InstrumentDonateLeadForm = () => {
         <LeadForm
           onSubmit={submitHandler}
           inputHandler={inputHandler}
-          values={values}
-          validationErrors={formState === formStates.invalid && values.errors}
+          fields={fields}
+          errors={formState === formStates.invalid && errors}
         />
       ) : formState === formStates.loading ? (
         <Spinner />

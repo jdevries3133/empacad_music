@@ -7,6 +7,7 @@ import {
   InstrumentDriveProgress,
   InstrumentDonateLeadForm,
   CashDonation,
+  IconAttribution,
 } from "../components";
 import { useFundraiserProgress } from "../hooks";
 
@@ -57,6 +58,7 @@ export default function Home() {
         </InstrumentDriveContainer>
       </PageWrapper>
       <CashDonation />
+      <IconAttribution />
     </>
   );
 }
