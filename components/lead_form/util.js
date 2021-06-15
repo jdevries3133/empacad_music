@@ -35,6 +35,11 @@ export const validateData = (data) => {
       'Please select an instrument. You may select "Other," and describe ' +
       "your instrument if it is not on the list.";
 
+  if (data.instrument === "Other" && !data.otherInstrument) {
+    errors["otherInstrument"] =
+      "Please describe the instrument you would like to donate.";
+  }
+
   return errors;
 };
 

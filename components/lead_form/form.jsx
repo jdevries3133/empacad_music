@@ -97,6 +97,9 @@ export const LeadForm = ({ onSubmit, inputHandler, fields }) => {
             />
           </>
         )}
+        {fields?.otherInstrument.errors?.show && (
+          <ErrMsg>{fields?.otherInstrument?.errors?.message}</ErrMsg>
+        )}
         <input type="submit" value="Submit" />
       </Form>
     </div>
