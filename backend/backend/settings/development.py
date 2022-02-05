@@ -1,5 +1,8 @@
 from .base import *
-from .secret import *
+
+
+SECRET_KEY = 'whatever'
+
 
 DEBUG = True
 

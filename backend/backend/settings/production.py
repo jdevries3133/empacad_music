@@ -1,7 +1,8 @@
 import os
 
 from .base import *
-from .secret import SECRET_KEY
+
+SECRET_KEY = os.getenv('SECRET_KEY')
 
 CORS_ALLOWED_ORIGINS = ['https://empacadmusic.org', 'http://empacadmusic.org']
 CSRF_TRUSTED_ORIGINS = ['empacadmusic.org']
