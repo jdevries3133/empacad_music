@@ -1,3 +1,9 @@
+# Archived
+
+I replaced this next.js site with an entire rewrite (and a site with an
+entirely different purpose) at this same domain. This repository is frozen
+but kept visible as a part of my portfolio.
+
 # Empacad Music
 
 The virtual home of Empowerment Academy Public Charter School's music program.
